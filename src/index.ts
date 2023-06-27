@@ -51,7 +51,7 @@ function Fabrica_De_Controladores() {
 
     const repositorio = new Repositorio();
     const usecase = new UseCase(repositorio);
-    const controlador = new Contorlador(usecase).handler;
+    const controlador = new Contorlador(usecase);
     return controlador;
 }
 
@@ -59,7 +59,7 @@ function cria_rota() {
 
     const router = express.Router();
     const controlador = Fabrica_De_Controladores();
-    router.get("/", controlador);
+    router.get("/", controlador.handler.bind(controlador));
     return router;
 }
 
