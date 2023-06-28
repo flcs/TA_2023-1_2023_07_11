@@ -1,6 +1,6 @@
 
-interface IUseCase {
-    perform() : string;
+interface IUseCase<Parametros> {
+    perform(params: Parametros) : string | Error;
 }
 
 export { IUseCase };
