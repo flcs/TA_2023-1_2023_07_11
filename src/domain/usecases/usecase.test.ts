@@ -4,7 +4,7 @@ import { UseCase } from "./usecase";
 
 
 class RepoStub implements IRepositorio {
-    get() {
+    findById() {
         return 'repo fake';
     }
 }
