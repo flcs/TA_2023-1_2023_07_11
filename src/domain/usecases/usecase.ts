@@ -20,7 +20,6 @@ class UseCase implements IUseCase<Usecase_Params, NotaFiscal> {
         if (id === '-1') {
             throw new Error('id inválido');
         }
-        return this.repo.
         return this.repo.findById(id);
     }
 }

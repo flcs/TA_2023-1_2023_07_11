@@ -1,11 +1,25 @@
 import { IRepositorio } from "src/repositories/contratos/irepositorio";
 import { Repositorio } from "src/repositories/repositorio";
 import { UseCase } from "./usecase";
+import { NotaFiscal } from "../entities/nota-fiscal";
 
 
-class RepoStub implements IRepositorio {
-    findById() {
-        return 'repo fake';
+
+class RepoStub implements IRepositorio<NotaFiscal> {
+    updateById(id: string, data: Partial<NotaFiscal>): NotaFiscal | Error {
+        throw new Error("Method not implemented.");
+    }
+    deleteById(id: string): boolean | Error {
+        throw new Error("Method not implemented.");
+    }
+    create(data: NotaFiscal): NotaFiscal | Error {
+        throw new Error("Method not implemented.");
+    }
+    findAll(): NotaFiscal[] {
+        throw new Error("Method not implemented.");
+    }
+    findById(): NotaFiscal | Error {
+        return {id: '0001'} as NotaFiscal;
     }
 }
 
@@ -26,7 +40,7 @@ describe('UseCase exemplo', () => {
         const result = sut.perform({id : '10000'});
 
         // assert
-        expect(result).toBe('repo fake');
+        expect(result).toEqual({ id: '0001'});
     });
 
     it('deve levantar uma excessão quando o id for -1', () => {
