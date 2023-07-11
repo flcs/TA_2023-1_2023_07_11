@@ -1,4 +1,4 @@
-import { Repositorio } from './repositorio';
+import { Repositorio } from './notafiscal-repositorio';
 import { NotaFiscal } from 'src/domain/entities/nota-fiscal';
 
 describe('Repositorio create', () => {

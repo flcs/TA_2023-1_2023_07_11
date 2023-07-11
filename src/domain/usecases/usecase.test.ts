@@ -1,5 +1,5 @@
 import { IRepositorio } from "src/repositories/contratos/irepositorio";
-import { Repositorio } from "src/repositories/repositorio";
+import { Repositorio } from "src/repositories/notafiscal-repositorio";
 import { UseCase } from "./usecase";
 import { NotaFiscal } from "../entities/nota-fiscal";
 

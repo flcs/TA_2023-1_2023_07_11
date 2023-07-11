@@ -1,7 +1,7 @@
 import { IRepositorio } from './contratos/irepositorio';
 import { NotaFiscal } from '../domain/entities/nota-fiscal';
 
-class Repositorio implements IRepositorio<NotaFiscal> {
+class NotFiscal_Repositorio implements IRepositorio<NotaFiscal> {
     lista: NotaFiscal[];
     
     constructor() {
@@ -53,4 +53,4 @@ class Repositorio implements IRepositorio<NotaFiscal> {
     
 }
 
-export { Repositorio }
+export { NotFiscal_Repositorio as Repositorio }

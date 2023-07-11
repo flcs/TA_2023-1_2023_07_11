@@ -4,16 +4,21 @@ import { IUseCase } from '../contratos/iusecase';
 
 import { NotaFiscal } from '../entities/nota-fiscal';
 
-export type Usecase_Params = {
-    id: string;
+// DTO entrada do caso de uso
+export namespace Usecase {
+    export type Params = {
+        id: string;
+    }
+    export type DTO_saida = NotaFiscal | Error;
 }
 
-class UseCase implements IUseCase<Usecase_Params, NotaFiscal> {
+class UseCase implements IUseCase<Usecase.Params, NotaFiscal> {
     repo: IRepositorio<NotaFiscal>;
     constructor(repo: IRepositorio<NotaFiscal>) {
         this.repo = repo;
     }
-    perform(params: Usecase_Params ): NotaFiscal | Error {
+    
+    perform(params: Usecase.Params ): Usecase.DTO_saida {
         console.log('use case')
         // const { id } = params;
         const id = params.id;
