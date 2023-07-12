@@ -1,24 +1,17 @@
-import { IRepositorio } from '../../repositories/contratos/irepositorio';
+import { IRepositorio_NotaFiscal } from '../../repositories/contratos/irepositorio';
 
-import { IUseCase } from '../contratos/iusecase';
+import { ICria_NotaFiscal_Usecase } from '../contratos/iusecase';
 
-import { NotaFiscal } from '../entities/nota-fiscal';
+import { NotaFiscal } from '../entities/notafiscal';
 
-// DTO entrada do caso de uso
-export namespace Usecase {
-    export type Params = {
-        id: string;
-    }
-    export type DTO_saida = NotaFiscal | Error;
-}
 
-class UseCase implements IUseCase<Usecase.Params, NotaFiscal> {
-    repo: IRepositorio<NotaFiscal>;
-    constructor(repo: IRepositorio<NotaFiscal>) {
+class Cria_NotaFiscal_Usecase implements ICria_NotaFiscal_Usecase {
+    repo: IRepositorio_NotaFiscal;
+    constructor(repo: IRepositorio_NotaFiscal) {
         this.repo = repo;
     }
     
-    perform(params: Usecase.Params ): Usecase.DTO_saida {
+    perform(params: ICria_NotaFiscal_Usecase.Params ): ICria_NotaFiscal_Usecase.DTO_saida {
         console.log('use case')
         // const { id } = params;
         const id = params.id;
@@ -29,4 +22,4 @@ class UseCase implements IUseCase<Usecase.Params, NotaFiscal> {
     }
 }
 
-export { UseCase }
+export { Cria_NotaFiscal_Usecase }

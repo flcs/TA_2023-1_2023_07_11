@@ -1,10 +1,10 @@
-import { Repositorio } from './notafiscal-repositorio';
-import { NotaFiscal } from 'src/domain/entities/nota-fiscal';
+import { NotFiscal_Repositorio } from './notafiscal-repositorio';
+import { NotaFiscal } from '../domain/entities/notafiscal';
 
 describe('Repositorio create', () => {
     it('deve ser capaz de adicionar um novo registro', () => {
         // arrange
-        const sut = new Repositorio();
+        const sut = new NotFiscal_Repositorio();
         const nota = new NotaFiscal('1');
 
         // act

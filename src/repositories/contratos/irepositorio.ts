@@ -1,9 +1,11 @@
-interface IRepositorio<EntidadeDoDominio> {
-    findById(id: string): EntidadeDoDominio | Error;
-    updateById(id: string, data: Partial<EntidadeDoDominio>): EntidadeDoDominio | Error;
+import { NotaFiscal } from "../../domain/entities/notafiscal";
+
+interface IRepositorio_NotaFiscal {
+    findById(id: string): NotaFiscal | Error;
+    updateById(id: string, data: Partial<NotaFiscal>): NotaFiscal | Error;
     deleteById(id: string): boolean | Error;
-    create(data: EntidadeDoDominio): EntidadeDoDominio | Error;
-    findAll(): EntidadeDoDominio[];
+    create(data: NotaFiscal): NotaFiscal | Error;
+    findAll(): NotaFiscal[];
 }
 
-export { IRepositorio };
+export { IRepositorio_NotaFiscal };

@@ -1,11 +1,11 @@
-import { IRepositorio } from "src/repositories/contratos/irepositorio";
-import { Repositorio } from "src/repositories/notafiscal-repositorio";
-import { UseCase } from "./usecase";
-import { NotaFiscal } from "../entities/nota-fiscal";
+import { IRepositorio_NotaFiscal } from "src/repositories/contratos/irepositorio";
+import { NotFiscal_Repositorio } from "src/repositories/notafiscal-repositorio";
+import { Cria_NotaFiscal_Usecase } from "./usecase";
+import { NotaFiscal } from "../entities/notafiscal";
 
 
 
-class RepoStub implements IRepositorio<NotaFiscal> {
+class RepoStub implements IRepositorio_NotaFiscal {
     updateById(id: string, data: Partial<NotaFiscal>): NotaFiscal | Error {
         throw new Error("Method not implemented.");
     }
@@ -25,7 +25,7 @@ class RepoStub implements IRepositorio<NotaFiscal> {
 
 function cria_sut() {
     const repo_fake = new RepoStub();
-    const sut = new UseCase(repo_fake);
+    const sut = new Cria_NotaFiscal_Usecase(repo_fake);
     return { repo_fake, sut };
 }
 
@@ -46,7 +46,7 @@ describe('UseCase exemplo', () => {
     it('deve levantar uma excessão quando o id for -1', () => {
         // arragen
         const repo_fake = new RepoStub();
-        const sut = new UseCase(repo_fake);
+        const sut = new Cria_NotaFiscal_Usecase(repo_fake);
         // act
         // const result = usecase.perform({id : '-1'});
 
