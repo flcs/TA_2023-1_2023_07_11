@@ -1,6 +1,6 @@
 import { IRepositorio_NotaFiscal } from '../../repositories/contratos/irepositorio';
 
-import { ICria_NotaFiscal_Usecase } from '../contratos/iusecase';
+import { ICria_NotaFiscal_Usecase } from '../contratos/icria-notafiscal-usecase';
 
 import { NotaFiscal } from '../entities/notafiscal';
 

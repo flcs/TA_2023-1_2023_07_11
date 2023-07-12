@@ -1,11 +1,11 @@
 import { Request, Response } from 'express';
-import { ICria_NotaFiscal_Usecase } from '../../domain/contratos/iusecase';
-import { Cria_NotaFiscal_Usecase } from '../../domain/usecases/usecase'
+import { ICria_NotaFiscal_Usecase } from '../../domain/contratos/icria-notafiscal-usecase';
+import { Cria_NotaFiscal_Usecase } from '../../domain/usecases/cria-nota-fiscal-usecase'
 import { NotaFiscal } from 'src/domain/entities/notafiscal';
-import { INotaFiscal_Create_Controlador } from '../contratos/inotafiscal-create-controller';
+import { IControlador } from '../contratos/icontrolador';
 
 
-class NotaFiscal_Create_Controlador implements INotaFiscal_Create_Controlador {
+class NotaFiscal_Create_Controlador implements IControlador {
     usecase: ICria_NotaFiscal_Usecase;
 
     constructor(usecase: ICria_NotaFiscal_Usecase) {
